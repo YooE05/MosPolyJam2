@@ -17,31 +17,34 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 1
-    mixerGroup: {fileID: -6618192482675976053, guid: 115a97aeb5f9d304b8470aa50a2bbcee,
-      type: 2}
+    mixerGroup: {fileID: -6618192482675976053, guid: 115a97aeb5f9d304b8470aa50a2bbcee, type: 2}
     clip: {fileID: 8300000, guid: e8485ca7ff5219b4bbc8a485141f511f, type: 3}
     source: {fileID: 0}
   - name: spring
     volume: 1
     pitch: 1
     loop: 1
-    mixerGroup: {fileID: -6618192482675976053, guid: 115a97aeb5f9d304b8470aa50a2bbcee,
-      type: 2}
+    mixerGroup: {fileID: -6618192482675976053, guid: 115a97aeb5f9d304b8470aa50a2bbcee, type: 2}
     clip: {fileID: 8300000, guid: 2c0d1ad80cb150243807f484a54aa09d, type: 3}
     source: {fileID: 0}
   - name: summer
     volume: 1
     pitch: 1
     loop: 1
-    mixerGroup: {fileID: -6618192482675976053, guid: 115a97aeb5f9d304b8470aa50a2bbcee,
-      type: 2}
+    mixerGroup: {fileID: -6618192482675976053, guid: 115a97aeb5f9d304b8470aa50a2bbcee, type: 2}
     clip: {fileID: 8300000, guid: 327d7c31bdcff5040a64361e5ff4a462, type: 3}
     source: {fileID: 0}
   - name: winter
     volume: 1
     pitch: 1
     loop: 1
-    mixerGroup: {fileID: -6618192482675976053, guid: 115a97aeb5f9d304b8470aa50a2bbcee,
-      type: 2}
+    mixerGroup: {fileID: -6618192482675976053, guid: 115a97aeb5f9d304b8470aa50a2bbcee, type: 2}
     clip: {fileID: 8300000, guid: 8d1811e2dbd381b43887fc8d14f02fd5, type: 3}
+    source: {fileID: 0}
+  - name: click
+    volume: 1
+    pitch: 1
+    loop: 1
+    mixerGroup: {fileID: -6618192482675976053, guid: 115a97aeb5f9d304b8470aa50a2bbcee, type: 2}
+    clip: {fileID: 8300000, guid: e268e1868d9c63c44aebbf247b789969, type: 3}
     source: {fileID: 0}

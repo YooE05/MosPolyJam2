@@ -19,10 +19,7 @@ public class SpriteMaskAnimator : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            StartTransmition();
-        }
+        
     }
 
     public void StartTransmition()
