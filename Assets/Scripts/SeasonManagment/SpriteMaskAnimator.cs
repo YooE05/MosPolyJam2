@@ -27,6 +27,8 @@ public class SpriteMaskAnimator : MonoBehaviour
 
     public void StartTransmition()
     {
+
+        StopAllCoroutines();
         StartCoroutine(TransmitMask());
 
     }
