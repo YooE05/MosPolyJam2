@@ -62,7 +62,10 @@ public class SeasonManager : MonoBehaviour
         OnSeasonChanged?.Invoke(type);
     }
 
-
+    public int Get_countOfSeasonSwitch ()
+    {
+        return _countOfSeasonSwitch;
+    }
 
 }
 

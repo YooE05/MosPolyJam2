@@ -61,7 +61,8 @@ public class Buttons : MonoBehaviour
     public void _RestartLevel ()
     {
         //eventSistem.GetComponent<other>().playClickSound();
-        StartCoroutine(waiter(SceneManager.GetActiveScene().buildIndex));
+        //StartCoroutine(waiter(SceneManager.GetActiveScene().buildIndex));
+        GameObject.Find("Charecter").GetComponent<CharecterControler>().Restart();
     }
     public void _StartNextLevel ()
     {

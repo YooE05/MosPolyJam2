@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class other : MonoBehaviour
@@ -10,12 +11,13 @@ public class other : MonoBehaviour
 
         if(WinPanel != null)
         {
-            WinPanel.SetActive(false);
+            //WinPanel.SetActive(false);
         }
     }
 
-    public void OpenWinPanel ()
+    public void OpenWinPanel (int seasonsCount)
     {
+        GameObject.Find("SeasonsCount").GetComponent<TMP_Text>().SetText("всего за "+seasonsCount.ToString()+" сезонов!");
         WinPanel.SetActive(true);
     }
 }
