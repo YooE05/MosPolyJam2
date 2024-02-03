@@ -6,8 +6,6 @@ using UnityEngine.EventSystems;
 
 public class CharecterControler : MonoBehaviour
 {
-    private bool checkFinish = false;
-
     GameObject eventSystem;
     GameObject charecterImage;
 
@@ -30,9 +28,9 @@ public class CharecterControler : MonoBehaviour
     {
         if(col.tag == "Finish")
         {
-            checkFinish = true;
             //eventSistem.GetComponent<other>().playFinishSound();
             eventSystem.GetComponent<other>().OpenWinPanel();
+            speed = 0;
         }
 
         if(col.tag == "KillZone" || col.tag == "Icicles")
@@ -45,6 +43,6 @@ public class CharecterControler : MonoBehaviour
     public void changeDir ()
     {
         LeftOrRight = !LeftOrRight;
-        charecterImage.gameObject.transform.localScale = new Vector3((LeftOrRight ? .1f : -.1f),1f,.2f);
+        charecterImage.gameObject.transform.localScale = new Vector3((LeftOrRight ? .1f : -.1f), 1f, .2f);
     }
 }

@@ -15,7 +15,7 @@ public class Summer : MonoBehaviour
     {
         for(int i = 0; i < DryGrounds.Length; i++)
         {
-            DryGrounds[i].GetComponent<BoxCollider>().enabled = false;
+            DryGrounds[i].GetComponent<BoxCollider>().isTrigger = true;
             DryGrounds[i].transform.Find("Dry").gameObject.SetActive(true);
             DryGrounds[i].transform.Find("Normal").gameObject.SetActive(false);
         }

@@ -15,7 +15,7 @@ public class Winter : MonoBehaviour
     {
         for(int i = 0; i < DryGrounds.Length; i++)
         {
-            DryGrounds[i].GetComponent<BoxCollider>().enabled = true;
+            DryGrounds[i].GetComponent<BoxCollider>().isTrigger = false;
             DryGrounds[i].transform.Find("Dry").gameObject.SetActive(false);
             DryGrounds[i].transform.Find("Normal").gameObject.SetActive(true);
         }
