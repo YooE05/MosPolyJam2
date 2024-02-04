@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 1635611898237176720}
   m_Layer: 0
   m_Name: RightSide
-  m_TagString: Untagged
+  m_TagString: rightSide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -439,10 +439,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fe444bd9997ab449ff0970c620d6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startSpeed: 3
-  isStartToRight: 0
-  _leftCollider: {fileID: 0}
-  _rightCollider: {fileID: 0}
+  _startSpeed: 6
+  isStartToRight: 1
+  _leftCollider: {fileID: 1635611900176212459}
+  _rightCollider: {fileID: 1635611898237176717}
 --- !u!95 &1998174650
 Animator:
   serializedVersion: 5
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 1635611900176212462}
   m_Layer: 0
   m_Name: LeftSide
-  m_TagString: Untagged
+  m_TagString: leftSide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

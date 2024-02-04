@@ -12,8 +12,12 @@ public class CameraFollowing : MonoBehaviour
 
     private void Awake()
     {
-        _startCameraPosition = _camera.position;
-        _startCharacterPosition = _character.position;
+        if (_camera != null && _character != null)
+        {
+            _startCameraPosition = _camera.position;
+            _startCharacterPosition = _character.position;
+        }
+
     }
 
 

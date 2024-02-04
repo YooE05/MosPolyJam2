@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class CameraSwitcher : MonoBehaviour
 {
-    [SerializeField]
-    private SpritesManager _spritesManager;
 
     [SerializeField]
     private List<GameObject> _cameras;
+
+    [SerializeField]
+    private GameObject _mainCamera;
 
     private int _activeCamIndex;
 
@@ -34,17 +35,20 @@ public class CameraSwitcher : MonoBehaviour
     internal void ShowPreviousCamera()
     {
         _activeCamIndex--;
-        ShowCamera(); 
+        ShowCamera();
     }
 
     private void ShowCamera()
     {
-        for (int i = 0; i < _cameras.Count; i++)
-        {
-            _cameras[i].SetActive(i == _activeCamIndex);
-        }
+        _mainCamera.transform.position = _cameras[_activeCamIndex].transform.position;
 
-        _spritesManager.SetSpriteMaskAnimator(_cameras[_activeCamIndex].GetComponentInChildren<SpriteMaskAnimator>());
+
+        Vector3 scaleAddition = (_cameras[_activeCamIndex].GetComponent<Camera>().orthographicSize / _mainCamera.GetComponent<Camera>().orthographicSize - 1) * _mainCamera.transform.localScale;
+
+        _mainCamera.transform.localScale += scaleAddition;
+        
+        _mainCamera.GetComponent<Camera>().orthographicSize = _cameras[_activeCamIndex].GetComponent<Camera>().orthographicSize;
+
     }
 
 }
