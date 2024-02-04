@@ -24,6 +24,12 @@ public class SeasonManager : MonoBehaviour
         }
     }
 
+    public int GetCountOfSeasons()
+    {
+       return _countOfSeasonSwitch;
+    }
+
+
     private void Init()
     {
         _countOfSeasonSwitch = 0;

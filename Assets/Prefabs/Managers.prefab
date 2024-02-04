@@ -105,6 +105,8 @@ GameObject:
   - component: {fileID: 4415647295317555074}
   - component: {fileID: 4415647295317555075}
   - component: {fileID: 4415647295317555072}
+  - component: {fileID: 6191728194497075000}
+  - component: {fileID: 751537546}
   m_Layer: 0
   m_Name: SeasonManager
   m_TagString: Untagged
@@ -166,6 +168,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plantsRoot: {fileID: 0}
+--- !u!114 &6191728194497075000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415647295317555079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 644cbbabbbb2a4d4a97792c3deead83a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DryGrounds: []
+  Icicles: []
+--- !u!114 &751537546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415647295317555079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad42e7ab0629c04698f95582006decc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waterParentObject: {fileID: 0}
+  _iceGrewDelay: 0.2
 --- !u!1 &4415647295554453830
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4415647295554453830}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.91, y: 9.07, z: -5.335}
+  m_LocalPosition: {x: -1.91, y: -1.29, z: -5.335}
   m_LocalScale: {x: 1.23, y: 1.28, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

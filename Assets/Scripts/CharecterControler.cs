@@ -1,61 +1,107 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class CharecterControler : MonoBehaviour
 {
+    public Action OnPlayerDied;
+    public Action OnPlayerWin;
+
     GameObject eventSystem;
     GameObject charecterImage;
     private Vector3 StartPos;
 
-    private float speed = 3;
 
-    private bool LeftOrRight = true;
+    [SerializeField]
+    private float _startSpeed = 3;
+    private float _currentSpeed;
 
-    void Start ()
+    private bool isMovingToleft;
+
+    [SerializeField]
+    private bool isStartToRight;
+
+
+    [SerializeField]
+    private Collider _leftCollider;
+    [SerializeField]
+    private Collider _rightCollider;
+
+
+
+    void Start()
     {
         eventSystem = GameObject.Find("EventSystem");
-        charecterImage = GameObject.Find("CharecterImage");
-        StartPos= transform.position;
+        charecterImage = GameObject.Find("CharacterView");
+        InitPlayer();
+
+        StartPos = transform.position;
     }
 
-    void Update ()
+    private void InitPlayer()
     {
-        GameObject.Find("SeasonsCount").GetComponent<TMP_Text>().SetText("всего за " + GameObject.Find("SeasonManager").GetComponent<SeasonManager>().Get_countOfSeasonSwitch() + " сезонов!");
-        transform.position += (LeftOrRight ? -1 : 1) * transform.right * speed * Time.deltaTime;
-    }
+        _currentSpeed = _startSpeed;
 
-    private void OnTriggerEnter (Collider col)
-    {
-        if(col.tag == "Finish")
+        _leftCollider.enabled = false;
+        _rightCollider.enabled = false;
+
+        //т.к. изначально спрайт повёрнут вправо
+        if (!isStartToRight)
         {
-            eventSystem.GetComponent<other>().OpenWinPanel(GameObject.Find("SeasonManager").GetComponent<SeasonManager>().Get_countOfSeasonSwitch());
-            speed = 0;
+            isMovingToleft = true;
+            _leftCollider.enabled = true;
+            Vector3 crntScale = charecterImage.gameObject.transform.localScale;
+            charecterImage.gameObject.transform.localScale = new Vector3(crntScale.x * -1f, crntScale.y, crntScale.z);
+        }
+        else
+        {
+            _rightCollider.enabled = true;
+            isMovingToleft = false;
+        }
+    }
+
+    void Update()
+    {
+        // GameObject.Find("SeasonsCount").GetComponent<TMP_Text>().SetText("всего за " + GameObject.Find("SeasonManager").GetComponent<SeasonManager>().Get_countOfSeasonSwitch() + " сезонов!");
+        transform.position += (isMovingToleft ? -1 : 1) * transform.right * _currentSpeed * Time.deltaTime;
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.tag == "Finish")
+        {
+            _currentSpeed = 0;
+            OnPlayerWin?.Invoke();
         }
 
-        if(col.tag == "KillZone" || col.tag == "Icicles")
+        if (col.tag == "KillZone" || col.tag == "Icicles")
         {
-            speed = 0;
+            _currentSpeed = 0;
+
             Restart();
+            OnPlayerDied?.Invoke();
         }
     }
 
-    public void changeDir ()
+    public void changeDir()
     {
-        LeftOrRight = !LeftOrRight;
-        charecterImage.gameObject.transform.localScale = new Vector3((LeftOrRight ? .1f : -.1f), 1f, .2f);
+        isMovingToleft = !isMovingToleft;
+
+        _leftCollider.enabled = isMovingToleft;
+        _rightCollider.enabled = !isMovingToleft;
+
+        Vector3 crntScale = charecterImage.gameObject.transform.localScale;
+        charecterImage.gameObject.transform.localScale = new Vector3(crntScale.x * -1f, crntScale.y, crntScale.z);
+
     }
 
-    public void Restart ()
+    public void Restart()
     {
         transform.position = StartPos;
-        LeftOrRight = true;
-        charecterImage.gameObject.transform.localScale = new Vector3((LeftOrRight ? .1f : -.1f), 1f, .2f);
-        speed = 3;
+        isMovingToleft = !isStartToRight;
 
-        eventSystem.GetComponent<IciclesANDDryGrounds>().Restart();
+        Vector3 crntScale = charecterImage.gameObject.transform.localScale;
+        charecterImage.gameObject.transform.localScale = new Vector3(Mathf.Abs(crntScale.x), crntScale.y, crntScale.z);
+
+        InitPlayer();
     }
 }

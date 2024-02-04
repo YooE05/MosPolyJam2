@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 2562001551310465576}
   m_Layer: 0
   m_Name: rightEdgeNearWaterEarthTile 1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 494564763213767523}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.042000294, y: -9.732285, z: 11.5702305}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 494564764187637396}

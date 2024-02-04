@@ -22,7 +22,7 @@ public class CharectersSides : MonoBehaviour
             col.gameObject.SetActive(false);
         }
 
-        if(col.gameObject.name != "KillZone" && col.gameObject.name != "Icicles" && gameObject.name != "DownSide")
+        if (col.gameObject.tag == "Wall")//if(col.gameObject.name != "KillZone" && col.gameObject.name != "Icicles" && gameObject.name != "DownSide")
         {
             charecter.GetComponent<CharecterControler>().changeDir();
             //Debug.Log(gameObject.name);

@@ -10,6 +10,10 @@ TagManager:
   - Charecter
   - Icicles
   - DryGrounds
+  - Wall
+  - CameraTrigger
+  - leftSide
+  - rightSide
   layers:
   - Default
   - TransparentFX
