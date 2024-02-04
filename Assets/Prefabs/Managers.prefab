@@ -63,6 +63,62 @@ MonoBehaviour:
   _uiController: {fileID: 0}
   _seasonManager: {fileID: 4415647295317555074}
   _characterController: {fileID: 0}
+--- !u!1 &751481718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751481719}
+  - component: {fileID: 751481720}
+  m_Layer: 0
+  m_Name: SeasonEffects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &751481719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751481718}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4415647294780279342}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &751481720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751481718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2813d2dbee9d614d9ecc5ab9b49b4a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteMaskAnimator: {fileID: 0}
+  _springParicles:
+  - {fileID: 0}
+  _summerParicles:
+  - {fileID: 0}
+  - {fileID: 0}
+  _autumParicles:
+  - {fileID: 0}
+  _winterParicles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &4415647294089915654
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,6 +211,7 @@ Transform:
   - {fileID: 4415647295317555077}
   - {fileID: 159463617}
   - {fileID: 2490615994922995079}
+  - {fileID: 751481719}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -206,7 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcfb7e6deeca6cc4fba8f92e8418ac4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initSeason: 0
+  _initSeason: 1
 --- !u!114 &4415647295317555075
 MonoBehaviour:
   m_ObjectHideFlags: 0

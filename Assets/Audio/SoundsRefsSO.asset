@@ -41,6 +41,13 @@ MonoBehaviour:
     mixerGroup: {fileID: -6618192482675976053, guid: 115a97aeb5f9d304b8470aa50a2bbcee, type: 2}
     clip: {fileID: 8300000, guid: 8d1811e2dbd381b43887fc8d14f02fd5, type: 3}
     source: {fileID: 0}
+  - name: water
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: -6618192482675976053, guid: 115a97aeb5f9d304b8470aa50a2bbcee, type: 2}
+    clip: {fileID: 8300000, guid: a61ced6e190b9044b95228c02558d6a3, type: 3}
+    source: {fileID: 0}
   - name: click
     volume: 1
     pitch: 1
