@@ -291,8 +291,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10, y: 15, z: 1}
+  m_Center: {x: 0, y: 6.6, z: 0}
 --- !u!114 &1635611899316677999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,6 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startSpeed: 3
+  _slowSpeed: 1.5
   isStartToRight: 0
   _leftCollider: {fileID: 0}
   _rightCollider: {fileID: 0}

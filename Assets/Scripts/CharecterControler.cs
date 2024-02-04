@@ -13,6 +13,9 @@ public class CharecterControler : MonoBehaviour
 
     [SerializeField]
     private float _startSpeed = 3;
+    [SerializeField]
+    private float _slowSpeed = 1.5f;
+
     private float _currentSpeed;
 
     private bool isMovingToleft;
@@ -61,7 +64,6 @@ public class CharecterControler : MonoBehaviour
 
     void Update()
     {
-        // GameObject.Find("SeasonsCount").GetComponent<TMP_Text>().SetText("всего за " + GameObject.Find("SeasonManager").GetComponent<SeasonManager>().Get_countOfSeasonSwitch() + " сезонов!");
         transform.position += (isMovingToleft ? -1 : 1) * transform.right * _currentSpeed * Time.deltaTime;
     }
 
@@ -103,5 +105,14 @@ public class CharecterControler : MonoBehaviour
         charecterImage.gameObject.transform.localScale = new Vector3(Mathf.Abs(crntScale.x), crntScale.y, crntScale.z);
 
         InitPlayer();
+    }
+
+    public void setSlowSpeed ()
+    {
+        _currentSpeed = _slowSpeed;
+    }
+    public void setNormalSpeed ()
+    {
+        _currentSpeed = _startSpeed;
     }
 }

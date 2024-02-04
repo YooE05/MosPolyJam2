@@ -15,17 +15,34 @@ public class CharectersSides : MonoBehaviour
     }
     private void OnTriggerEnter (Collider col)
     {
-        if(col.gameObject.tag == "DryGrounds" && col.gameObject.GetComponent<BoxCollider>().isTrigger && gameObject.name == "DownSide")
+        if(gameObject.name == "DownSide")
         {
-            GameObject HitEffects = Instantiate(effects, col.transform.position - new Vector3(0, 0.5f, 0), Quaternion.Euler(new Vector3(-90, 0, 0)));
-            Destroy(HitEffects, 1);
-            col.gameObject.SetActive(false);
-        }
+            if(col.gameObject.tag == "DryGrounds" && col.gameObject.GetComponent<BoxCollider>().isTrigger)
+            {
+                GameObject HitEffects = Instantiate(effects, col.transform.position - new Vector3(0, 0.5f, 0), Quaternion.Euler(new Vector3(-90, 0, 0)));
+                Destroy(HitEffects, 1);
+                col.gameObject.SetActive(false);
 
-        if (col.gameObject.tag == "Wall")//if(col.gameObject.name != "KillZone" && col.gameObject.name != "Icicles" && gameObject.name != "DownSide")
+                charecter.GetComponent<CharecterControler>().setSlowSpeed();
+            }
+            else
+                charecter.GetComponent<CharecterControler>().setNormalSpeed();
+
+        }
+        else
+        if(col.gameObject.tag == "Wall")
         {
             charecter.GetComponent<CharecterControler>().changeDir();
-            //Debug.Log(gameObject.name);
+        }
+    }
+    private void OnTriggerExit (Collider col)
+    {
+        if(gameObject.name == "DownSide")
+        {
+            if(col.gameObject.tag != "DryGrounds")
+            {
+                charecter.GetComponent<CharecterControler>().setNormalSpeed();
+            }
         }
     }
 }
