@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class IciclesANDDryGrounds : MonoBehaviour, ISeasonListener
@@ -9,9 +10,21 @@ public class IciclesANDDryGrounds : MonoBehaviour, ISeasonListener
     [HideInInspector]
     public GameObject[] Icicles;
 
+
+    private List<DryWall> _dryWalls = new();
+
     void Awake()
     {
         DryGrounds = GameObject.FindGameObjectsWithTag("DryGrounds");
+        foreach (var dryGround in DryGrounds)
+        {
+            if (dryGround.GetComponent<DryWall>())
+            {
+                _dryWalls.Add(dryGround.GetComponent<DryWall>());
+            }
+        }
+
+
         Icicles = GameObject.FindGameObjectsWithTag("Icicles");
     }
 
@@ -34,6 +47,10 @@ public class IciclesANDDryGrounds : MonoBehaviour, ISeasonListener
         {
             DryGrounds[i].GetComponent<BoxCollider>().isTrigger = false;
         }
+        for (int i = 0; i < _dryWalls.Count; i++)
+        {
+            _dryWalls[i]._wallGO.SetActive(true);
+        }
 
 
         switch (seasonType)
@@ -47,6 +64,11 @@ public class IciclesANDDryGrounds : MonoBehaviour, ISeasonListener
                     for (int i = 0; i < DryGrounds.Length; i++)
                     {
                         DryGrounds[i].GetComponent<BoxCollider>().isTrigger = true;
+                    }
+
+                    for (int i = 0; i < _dryWalls.Count; i++)
+                    {
+                        _dryWalls[i]._wallGO.SetActive(false);
                     }
                     break;
                 }

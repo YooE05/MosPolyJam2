@@ -112,8 +112,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635611898237176719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.45, y: -0.305, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0.45, y: 0.518, z: 0}
+  m_LocalScale: {x: 0.1, y: 1.47, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1635611899347779334}
@@ -439,7 +439,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fe444bd9997ab449ff0970c620d6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startSpeed: 3
   isStartToRight: 0
+  _leftCollider: {fileID: 0}
+  _rightCollider: {fileID: 0}
 --- !u!95 &1998174650
 Animator:
   serializedVersion: 5
@@ -489,8 +492,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635611900176212453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.45, y: -0.305, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: -0.45, y: 0.518, z: 0}
+  m_LocalScale: {x: 0.1, y: 1.47, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1635611899347779334}

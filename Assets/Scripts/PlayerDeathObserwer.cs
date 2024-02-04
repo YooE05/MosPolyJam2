@@ -12,13 +12,21 @@ public class PlayerDeathObserwer : MonoBehaviour
     private void OnEnable()
     {
         _characterController.OnPlayerDied += _iciclesANDDry.RestoreDryEarth;
-        _characterController.OnPlayerDied += _cameraSwitcher.ReloadCameras;
+
+        if (_cameraSwitcher)
+        {
+            _characterController.OnPlayerDied += _cameraSwitcher.ReloadCameras;
+        }
+
     }
 
     private void OnDisable()
     {
         _characterController.OnPlayerDied -= _iciclesANDDry.RestoreDryEarth;
-        _characterController.OnPlayerDied -= _cameraSwitcher.ReloadCameras;
+        if (_cameraSwitcher)
+        {
+            _characterController.OnPlayerDied -= _cameraSwitcher.ReloadCameras;
+        }
     }
 
 }
