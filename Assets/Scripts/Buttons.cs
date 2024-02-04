@@ -20,7 +20,7 @@ public class Buttons : MonoBehaviour
         if(MainMenuPanel != null)
             MainMenuPanel.SetActive(true);
 
-        lastLevel = SceneManager.sceneCountInBuildSettings - 3;
+        lastLevel = SceneManager.sceneCountInBuildSettings - 1;
         currentLevel = SceneManager.GetActiveScene().buildIndex;
 
     }
@@ -28,7 +28,7 @@ public class Buttons : MonoBehaviour
     public void _StartBtn ()
     {
         //eventSistem.GetComponent<other>().playClickSound();
-        StartCoroutine(waiter("level1"));
+        StartCoroutine(waiter("Level1"));
     }
     public void _StartSelectedLevel ()
     {
@@ -40,13 +40,14 @@ public class Buttons : MonoBehaviour
     public void _StartTutorialLevel ()
     {
         //eventSistem.GetComponent<other>().playClickSound();
-        StartCoroutine(waiter("TutorialLevel"));
+        StartCoroutine(waiter("Level1"));
     }
     public void _OpenSelectLevelPanel ()
     {
         flag = !flag;
         //eventSistem.GetComponent<other>().playClickSound();
         LevelPanel.SetActive(flag);
+        MainMenuPanel.SetActive(!flag);
     }
     public void _ExitFromGame ()
     {
@@ -83,6 +84,7 @@ public class Buttons : MonoBehaviour
 
     IEnumerator waiter (string ind)
     {
+        Debug.Log(ind);
         yield return new WaitForSecondsRealtime(.1f);
         SceneManager.LoadScene(ind);
     }
