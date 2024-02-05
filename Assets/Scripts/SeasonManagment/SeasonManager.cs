@@ -11,6 +11,8 @@ public class SeasonManager : MonoBehaviour
     private SeasonType _initSeason;
     private SeasonType _currentSeason;
 
+    public bool IsCanSwitch { get; set; }
+
     private void Start()
     {
         Init();
@@ -18,7 +20,7 @@ public class SeasonManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && IsCanSwitch)
         {
             OnChangeSeason();
         }
@@ -26,12 +28,13 @@ public class SeasonManager : MonoBehaviour
 
     public int GetCountOfSeasons()
     {
-       return _countOfSeasonSwitch;
+        return _countOfSeasonSwitch;
     }
 
 
     private void Init()
     {
+        IsCanSwitch = true;
         _countOfSeasonSwitch = 0;
         _currentSeason = _initSeason;
         SetSeason(_currentSeason);
@@ -68,7 +71,7 @@ public class SeasonManager : MonoBehaviour
         OnSeasonChanged?.Invoke(type);
     }
 
-    public int Get_countOfSeasonSwitch ()
+    public int Get_countOfSeasonSwitch()
     {
         return _countOfSeasonSwitch;
     }

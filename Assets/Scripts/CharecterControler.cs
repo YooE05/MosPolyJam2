@@ -6,7 +6,6 @@ public class CharecterControler : MonoBehaviour
     public Action OnPlayerDied;
     public Action OnPlayerWin;
 
-    GameObject eventSystem;
     GameObject charecterImage;
     private Vector3 StartPos;
 
@@ -33,7 +32,6 @@ public class CharecterControler : MonoBehaviour
 
     void Start()
     {
-        eventSystem = GameObject.Find("EventSystem");
         charecterImage = GameObject.Find("CharacterView");
         InitPlayer();
 
@@ -42,6 +40,7 @@ public class CharecterControler : MonoBehaviour
 
     private void InitPlayer()
     {
+        charecterImage.SetActive(true);
         _currentSpeed = _startSpeed;
 
         _leftCollider.enabled = false;
@@ -72,6 +71,7 @@ public class CharecterControler : MonoBehaviour
         if (col.tag == "Finish")
         {
             _currentSpeed = 0;
+            charecterImage.SetActive(false);
             OnPlayerWin?.Invoke();
         }
 

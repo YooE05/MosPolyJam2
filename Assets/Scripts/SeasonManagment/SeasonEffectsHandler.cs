@@ -11,16 +11,16 @@ public class SeasonEffectsHandler : MonoBehaviour, ISeasonListener
     private SpriteMaskAnimator _spriteMaskAnimator;
 
     [SerializeField]
-    private List<ParticleSystem> _springParicles;
+    private List<ParticleSystemRenderer> _springParicles;
     [SerializeField]
-    private List<ParticleSystem> _summerParicles;
+    private List<ParticleSystemRenderer> _summerParicles;
     [SerializeField]
-    private List<ParticleSystem> _autumParicles;
+    private List<ParticleSystemRenderer> _autumParicles;
     [SerializeField]
-    private List<ParticleSystem> _winterParicles;
+    private List<ParticleSystemRenderer> _winterParicles;
 
 
-    private List<List<ParticleSystem>> _allParicles = new();
+    private List<List<ParticleSystemRenderer>> _allParicles = new();
     private int _currentSeasonIndex;
     private int _previousSeasonIndex;
 
@@ -44,33 +44,11 @@ public class SeasonEffectsHandler : MonoBehaviour, ISeasonListener
         _spriteMaskAnimator.OnTransmitionEnded -= EndTransmition;
     }
 
-    private void StopAllPArticles()
-    {
-        for (int i = 0; i < _autumParicles.Count; i++)
-        {
-            _autumParicles[i].Stop();
-        }
-        for (int i = 0; i < _springParicles.Count; i++)
-        {
-            _springParicles[i].Stop();
-        }
-        for (int i = 0; i < _winterParicles.Count; i++)
-        {
-            _winterParicles[i].Stop();
-        }
-        for (int i = 0; i < _summerParicles.Count; i++)
-        {
-            _summerParicles[i].Stop();
-        }
-    }
-
-
     public void SeasonChangeAction(SeasonType seasonType)
     {
         _currentSeasonIndex = (int)seasonType;
         _previousSeasonIndex = (_currentSeasonIndex + 3) % 4;
 
-        //StopAllPArticles();
         switch (seasonType)
         {
             case SeasonType.Spring:

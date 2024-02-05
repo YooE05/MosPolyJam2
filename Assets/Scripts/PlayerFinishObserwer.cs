@@ -21,6 +21,7 @@ public class PlayerFinishObserwer : MonoBehaviour
 
     private void ShowWinPanel()
     {
+        _seasonManager.IsCanSwitch = false;
         _uiController.OpenWinPanel(_seasonManager.GetCountOfSeasons());
     }
 

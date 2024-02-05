@@ -442,8 +442,8 @@ MonoBehaviour:
   _startSpeed: 3
   _slowSpeed: 1.5
   isStartToRight: 0
-  _leftCollider: {fileID: 0}
-  _rightCollider: {fileID: 0}
+  _leftCollider: {fileID: 1635611900176212459}
+  _rightCollider: {fileID: 1635611898237176717}
 --- !u!95 &1998174650
 Animator:
   serializedVersion: 5

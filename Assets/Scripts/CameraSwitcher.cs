@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class CameraSwitcher : MonoBehaviour
 {
+    [SerializeField]
+    private bool _isOn;
+
 
     [SerializeField]
     private List<GameObject> _cameras;
@@ -16,13 +19,18 @@ public class CameraSwitcher : MonoBehaviour
 
     private void Awake()
     {
-        ReloadCameras();
+        if (_isOn)
+        {
+            ReloadCameras();
+        }
+
     }
 
     public void ReloadCameras()
     {
         _activeCamIndex = 0;
         ShowCamera();
+
     }
 
 
@@ -40,15 +48,17 @@ public class CameraSwitcher : MonoBehaviour
 
     private void ShowCamera()
     {
-        _mainCamera.transform.position = _cameras[_activeCamIndex].transform.position;
+        if (_isOn)
+        {
+            _mainCamera.transform.position = _cameras[_activeCamIndex].transform.position;
 
 
-        Vector3 scaleAddition = (_cameras[_activeCamIndex].GetComponent<Camera>().orthographicSize / _mainCamera.GetComponent<Camera>().orthographicSize - 1) * _mainCamera.transform.localScale;
+            Vector3 scaleAddition = (_cameras[_activeCamIndex].GetComponent<Camera>().orthographicSize / _mainCamera.GetComponent<Camera>().orthographicSize - 1) * _mainCamera.transform.localScale;
 
-        _mainCamera.transform.localScale += scaleAddition;
-        
-        _mainCamera.GetComponent<Camera>().orthographicSize = _cameras[_activeCamIndex].GetComponent<Camera>().orthographicSize;
+            _mainCamera.transform.localScale += scaleAddition;
 
+            _mainCamera.GetComponent<Camera>().orthographicSize = _cameras[_activeCamIndex].GetComponent<Camera>().orthographicSize;
+        }
     }
 
 }
