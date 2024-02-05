@@ -13,6 +13,11 @@ public class SeasonManager : MonoBehaviour
 
     public bool IsCanSwitch { get; set; }
 
+    private void Awake()
+    {
+        IsCanSwitch = true;
+    }
+
     private void Start()
     {
         Init();
@@ -34,7 +39,7 @@ public class SeasonManager : MonoBehaviour
 
     private void Init()
     {
-        IsCanSwitch = true;
+        //IsCanSwitch = true;
         _countOfSeasonSwitch = 0;
         _currentSeason = _initSeason;
         SetSeason(_currentSeason);

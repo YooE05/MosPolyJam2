@@ -6,7 +6,8 @@ public class CharecterControler : MonoBehaviour
     public Action OnPlayerDied;
     public Action OnPlayerWin;
 
-    GameObject charecterImage;
+    private GameObject charecterImage;
+    private Animator animator;
     private Vector3 StartPos;
 
     [SerializeField]
@@ -30,16 +31,40 @@ public class CharecterControler : MonoBehaviour
     private Collider _leftCollider;
     [SerializeField]
     private Collider _rightCollider;
+    private bool _canMove;
 
-
-
-    void Start()
+    void Awake()
     {
+        _canMove = true;
         charecterImage = GameObject.Find("CharacterView");
+        animator = GetComponent<Animator>();
         InitPlayer();
 
         StartPos = transform.position;
     }
+
+    private void StopAnimation()
+    {
+        animator.enabled = false;
+    }
+    private void StartAnimation()
+    {
+        animator.enabled = true;
+    }
+
+    public void StopMoving()
+    {
+        StopAnimation();
+        _canMove = false;
+    }
+
+    public void StartMoving()
+    {
+        StartAnimation();
+        _canMove = true;
+    }
+
+
 
     private void InitPlayer()
     {
@@ -66,12 +91,16 @@ public class CharecterControler : MonoBehaviour
 
     void Update()
     {
-        transform.position += (isMovingToleft ? -1 : 1) * transform.right * _currentSpeed * Time.deltaTime;
+        if (_canMove)
+        {
+            transform.position += (isMovingToleft ? -1 : 1) * transform.right * _currentSpeed * Time.deltaTime;
+        }
+
     }
 
     private void OnTriggerEnter(Collider col)
     {
- 
+
         switch (col.tag)
         {
             case "Finish":

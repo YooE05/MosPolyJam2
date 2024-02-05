@@ -15,7 +15,6 @@ internal class SpritesManager : MonoBehaviour, ISeasonListener
 
     private void OnEnable()
     {
- 
         _spriteMaskAnimator.OnTransmitionEnded += EndTransmition;
     }
 
