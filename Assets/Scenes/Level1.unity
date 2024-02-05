@@ -6147,6 +6147,7 @@ Transform:
   - {fileID: 2051749111}
   - {fileID: 1272448468}
   - {fileID: 448895975}
+  - {fileID: 709843831}
   - {fileID: 185440752}
   - {fileID: 284437205}
   - {fileID: 2103805353}
@@ -6168,6 +6169,7 @@ Transform:
   - {fileID: 877137990}
   - {fileID: 1630307065}
   - {fileID: 1139355204}
+  - {fileID: 1520322144}
   - {fileID: 1274468439}
   - {fileID: 822908856}
   - {fileID: 2042325894}
@@ -6175,80 +6177,78 @@ Transform:
   - {fileID: 973607194}
   - {fileID: 912249882}
   - {fileID: 526006028}
+  - {fileID: 645582002}
   - {fileID: 359865392}
   - {fileID: 1683820740}
   - {fileID: 1720313014}
   - {fileID: 309533201}
   - {fileID: 1629626297}
   - {fileID: 837187098}
+  - {fileID: 1700416133}
   - {fileID: 98449946}
   - {fileID: 733676344}
-  - {fileID: 709843831}
+  - {fileID: 1938358551}
   - {fileID: 1280252028}
-  - {fileID: 2071841079}
   - {fileID: 1047660335}
+  - {fileID: 1225843981}
   - {fileID: 78686369}
   - {fileID: 1560771641}
-  - {fileID: 1180281433}
+  - {fileID: 383547336}
   - {fileID: 2138154973}
   - {fileID: 788709216}
-  - {fileID: 1856432410}
+  - {fileID: 2075708302}
+  - {fileID: 1288910798}
   - {fileID: 542130331}
-  - {fileID: 2048218846}
+  - {fileID: 2071841079}
+  - {fileID: 806971876}
   - {fileID: 1729420845}
-  - {fileID: 1225843981}
+  - {fileID: 807818870}
+  - {fileID: 1180281433}
   - {fileID: 107716228}
   - {fileID: 2065485852}
-  - {fileID: 1559120027}
-  - {fileID: 235419550}
-  - {fileID: 645582002}
-  - {fileID: 1741900593}
+  - {fileID: 979098620}
   - {fileID: 1943903868}
+  - {fileID: 235419550}
+  - {fileID: 2019934843}
+  - {fileID: 2048218846}
   - {fileID: 996378315}
-  - {fileID: 1935948317}
+  - {fileID: 1044763753}
+  - {fileID: 596847774}
+  - {fileID: 850703453}
   - {fileID: 1327073774}
   - {fileID: 1547906111}
   - {fileID: 1945948751}
-  - {fileID: 1938358551}
   - {fileID: 1034725369}
+  - {fileID: 1856432410}
   - {fileID: 1285808206}
+  - {fileID: 1013410650}
   - {fileID: 1399236320}
   - {fileID: 756754890}
+  - {fileID: 1559120027}
   - {fileID: 2144814011}
   - {fileID: 688791780}
+  - {fileID: 1536627287}
   - {fileID: 2118354800}
   - {fileID: 1294338107}
   - {fileID: 2137531767}
-  - {fileID: 108373274}
-  - {fileID: 1288910798}
-  - {fileID: 2120411670}
-  - {fileID: 2075708302}
-  - {fileID: 836613665}
-  - {fileID: 850703453}
-  - {fileID: 1122059720}
-  - {fileID: 383547336}
-  - {fileID: 2012171394}
-  - {fileID: 1013410650}
-  - {fileID: 1193347621}
-  - {fileID: 1700416133}
-  - {fileID: 757849248}
-  - {fileID: 806971876}
-  - {fileID: 1235195032}
-  - {fileID: 1536627287}
-  - {fileID: 2109319394}
-  - {fileID: 807818870}
-  - {fileID: 4017086}
   - {fileID: 437019163}
+  - {fileID: 108373274}
+  - {fileID: 2120411670}
+  - {fileID: 836613665}
+  - {fileID: 1122059720}
+  - {fileID: 2012171394}
+  - {fileID: 1193347621}
+  - {fileID: 757849248}
+  - {fileID: 1235195032}
+  - {fileID: 2109319394}
+  - {fileID: 1741900593}
+  - {fileID: 4017086}
+  - {fileID: 1935948317}
   - {fileID: 240996795}
-  - {fileID: 1044763753}
   - {fileID: 1503506929}
-  - {fileID: 979098620}
   - {fileID: 569082450}
-  - {fileID: 1520322144}
   - {fileID: 386084266}
-  - {fileID: 2019934843}
   - {fileID: 1773650966}
-  - {fileID: 596847774}
   - {fileID: 1141346598}
   - {fileID: 528821100}
   - {fileID: 649797173}
@@ -11616,6 +11616,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1843275865215892243, guid: 26af276b68d56414cb4da7076f577676, type: 3}
   m_PrefabInstance: {fileID: 362438610}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &362770037 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1142131412440900021, guid: ff4d9c8c941298d47955c0b23efd2e4d, type: 3}
+  m_PrefabInstance: {fileID: 1112032185}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &365585450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13932,6 +13943,7 @@ Transform:
   - {fileID: 1264443280}
   - {fileID: 2119730367}
   - {fileID: 115721644}
+  - {fileID: 2059031320}
   - {fileID: 771976730}
   - {fileID: 890246175}
   - {fileID: 1738800350}
@@ -13947,7 +13959,6 @@ Transform:
   - {fileID: 1185845104}
   - {fileID: 1133571752}
   - {fileID: 789628469}
-  - {fileID: 2059031320}
   m_Father: {fileID: 937754970}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -35365,6 +35376,10 @@ PrefabInstance:
       propertyPath: _seasonManager
       value: 
       objectReference: {fileID: 291326799}
+    - target: {fileID: 1142131412444848445, guid: ff4d9c8c941298d47955c0b23efd2e4d, type: 3}
+      propertyPath: _seasonCounterTxt
+      value: 
+      objectReference: {fileID: 362770037}
     - target: {fileID: 1142131412660734842, guid: ff4d9c8c941298d47955c0b23efd2e4d, type: 3}
       propertyPath: m_IsActive
       value: 1

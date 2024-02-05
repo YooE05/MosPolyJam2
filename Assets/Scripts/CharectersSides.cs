@@ -28,6 +28,8 @@ public class CharectersSides : MonoBehaviour
             else
                 charecter.GetComponent<CharecterControler>().setNormalSpeed();
 
+           // if(col.gameObject.name == "lowerPlantTile")
+
         }
         else
         if(col.gameObject.tag == "Wall")
@@ -35,7 +37,20 @@ public class CharectersSides : MonoBehaviour
             charecter.GetComponent<CharecterControler>().changeDir();
         }
     }
-    private void OnTriggerExit (Collider col)
+
+    private void OnTriggerStay (Collider col)
+    {
+        if(gameObject.name == "DownSide")
+        {
+            if(col.gameObject.tag == "DryGrounds" && col.gameObject.GetComponent<BoxCollider>().isTrigger)
+            {
+                
+                charecter.GetComponent<CharecterControler>().setSlowSpeed();
+            }
+        }
+    }
+
+    /*private void OnTriggerExit (Collider col)
     {
         if(gameObject.name == "DownSide")
         {
@@ -44,5 +59,5 @@ public class CharectersSides : MonoBehaviour
                 charecter.GetComponent<CharecterControler>().setNormalSpeed();
             }
         }
-    }
+    }*/
 }
