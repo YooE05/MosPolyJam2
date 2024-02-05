@@ -80,7 +80,7 @@ public class IciclesANDDryGrounds : MonoBehaviour, ISeasonListener
                 {
                     for (int i = 0; i < Icicles.Length; i++)
                     {
-                        Icicles[i].GetComponent<Collider>().enabled = false;
+                        Icicles[i].GetComponent<Collider>().enabled = true;
                     }
                     break;
                 }
