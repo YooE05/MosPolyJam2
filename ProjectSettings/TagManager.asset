@@ -14,6 +14,7 @@ TagManager:
   - CameraTrigger
   - leftSide
   - rightSide
+  - Water
   layers:
   - Default
   - TransparentFX

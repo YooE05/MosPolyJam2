@@ -439,6 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fe444bd9997ab449ff0970c620d6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fallRespawnDelay: 2
   _startSpeed: 3
   _slowSpeed: 1.5
   isStartToRight: 0

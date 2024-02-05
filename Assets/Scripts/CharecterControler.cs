@@ -9,6 +9,9 @@ public class CharecterControler : MonoBehaviour
     GameObject charecterImage;
     private Vector3 StartPos;
 
+    [SerializeField]
+    private float _fallRespawnDelay = 1.5f;
+
 
     [SerializeField]
     private float _startSpeed = 3;
@@ -68,20 +71,47 @@ public class CharecterControler : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.tag == "Finish")
+ 
+        switch (col.tag)
         {
-            _currentSpeed = 0;
-            charecterImage.SetActive(false);
-            OnPlayerWin?.Invoke();
+            case "Finish":
+                {
+                    AudioManager.Instance.PlaySound("finish");
+                    _currentSpeed = 0;
+                    charecterImage.SetActive(false);
+                    OnPlayerWin?.Invoke();
+                    break;
+                }
+            case "KillZone":
+                {
+                    AudioManager.Instance.PlaySound("fallDeath");
+
+                    Invoke("PlayerDieActions", _fallRespawnDelay);
+                    break;
+                }
+            case "Water":
+                {
+                    AudioManager.Instance.PlaySound("waterDeath");
+                    PlayerDieActions();
+                    break;
+                }
+            case "Icicles":
+                {
+                    AudioManager.Instance.PlaySound("iciclesDeath");
+                    PlayerDieActions();
+                    break;
+                }
+            default:
+                break;
         }
 
-        if (col.tag == "KillZone" || col.tag == "Icicles")
-        {
-            _currentSpeed = 0;
+    }
 
-            Restart();
-            OnPlayerDied?.Invoke();
-        }
+    private void PlayerDieActions()
+    {
+        _currentSpeed = 0;
+        Restart();
+        OnPlayerDied?.Invoke();
     }
 
     public void changeDir()
@@ -107,11 +137,11 @@ public class CharecterControler : MonoBehaviour
         InitPlayer();
     }
 
-    public void setSlowSpeed ()
+    public void setSlowSpeed()
     {
         _currentSpeed = _slowSpeed;
     }
-    public void setNormalSpeed ()
+    public void setNormalSpeed()
     {
         _currentSpeed = _startSpeed;
     }
