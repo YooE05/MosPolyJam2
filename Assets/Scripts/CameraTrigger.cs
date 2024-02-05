@@ -4,17 +4,44 @@ public class CameraTrigger : MonoBehaviour
 {
     [SerializeField] private CameraSwitcher _cameraSwitcher;
 
+    [SerializeField]
+    private bool _isOnlyMoveToNextCam;
+
+    [SerializeField]
+    private bool _isInversed = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "rightSide")
+        if (_isOnlyMoveToNextCam)
         {
-            _cameraSwitcher.ShowNextCamera();
+            if (other.tag == "rightSide" || other.tag == "leftSide")
+            {
+                _cameraSwitcher.ShowNextCamera();
+            }
         }
-
-        if (other.tag == "leftSide")
+        else if (_isInversed)
         {
-            _cameraSwitcher.ShowPreviousCamera();
+            if (other.tag == "rightSide")
+            {
+                _cameraSwitcher.ShowPreviousCamera();
+            }
+
+            if (other.tag == "leftSide")
+            {
+                _cameraSwitcher.ShowNextCamera();
+            }
+        }
+        else
+        {
+            if (other.tag == "rightSide")
+            {
+                _cameraSwitcher.ShowNextCamera();
+            }
+
+            if (other.tag == "leftSide")
+            {
+                _cameraSwitcher.ShowPreviousCamera();
+            }
         }
     }
 }
