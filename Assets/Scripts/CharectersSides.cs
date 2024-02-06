@@ -24,6 +24,8 @@ public class CharectersSides : MonoBehaviour
                 col.gameObject.SetActive(false);
 
                 charecter.GetComponent<CharecterControler>().setSlowSpeed();
+
+                AudioManager.Instance.PlaySound("earth");
             }
             else
                 charecter.GetComponent<CharecterControler>().setNormalSpeed();

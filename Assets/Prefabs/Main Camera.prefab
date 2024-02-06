@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteMaskInstance: {fileID: 3642260612695802098}
-  _animationDelay: 0.5
+  _animationDelay: 0.3
   _maskSprites:
   - {fileID: 21300000, guid: 1619ec09887bedf428370f2e18b21c1c, type: 3}
   - {fileID: 21300000, guid: 9ba65d232d0f26b4bbdb86ebbb928a89, type: 3}

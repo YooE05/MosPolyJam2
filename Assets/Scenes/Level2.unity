@@ -25913,12 +25913,12 @@ Transform:
   - {fileID: 1324612715}
   - {fileID: 191661564}
   - {fileID: 546962121}
+  - {fileID: 633596420}
   - {fileID: 600625887}
   - {fileID: 532061462}
-  - {fileID: 2003300647}
   - {fileID: 2008600905}
+  - {fileID: 2003300647}
   - {fileID: 4816442}
-  - {fileID: 633596420}
   - {fileID: 128276853}
   - {fileID: 1734474501}
   m_Father: {fileID: 937754970}
@@ -26753,6 +26753,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3642260612695802099, guid: b1ed802a50559d6408d1cc4ceeea2e35, type: 3}
+      propertyPath: _animationDelay
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3642260612914735979, guid: b1ed802a50559d6408d1cc4ceeea2e35, type: 3}
       propertyPath: m_RootOrder
       value: 1
