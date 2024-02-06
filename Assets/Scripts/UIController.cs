@@ -27,13 +27,15 @@ public class UIController : MonoBehaviour
     {
         _winPanel.SetActive(false);
         _playScreenPanel.SetActive(true);
+
+        _inventationTxt.SetText("вы придумали " + _inventationConfig.GetRandomInventation() + "!");
     }
 
     public void OpenWinPanel(int seasonsCount)
     {
         _playScreenPanel.SetActive(false);
 
-        _inventationTxt.SetText("вы придумали " + _inventationConfig.GetRandomInventation() + "!");
+       // _inventationTxt.SetText("вы придумали " + _inventationConfig.GetRandomInventation() + "!");
 
         string strAddition;
 
